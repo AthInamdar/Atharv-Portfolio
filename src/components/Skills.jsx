@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from './Section';
 import { skills } from '../data/portfolio';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const Skills = () => {
     return (
@@ -15,7 +15,7 @@ const Skills = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {skills.map((skillGroup, index) => (
-                    <motion.div
+                    <Motion.div
                         key={index}
                         whileHover={{ y: -5 }}
                         className="glass-card p-8 rounded-2xl relative overflow-hidden group"
@@ -41,7 +41,7 @@ const Skills = () => {
                                 </span>
                             ))}
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 ))}
             </div>
         </Section>

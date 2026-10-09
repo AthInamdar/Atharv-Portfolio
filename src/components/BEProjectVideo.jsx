@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Section from './Section';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const BEProjectVideo = () => {
     const [expanded, setExpanded] = useState(false);
@@ -16,7 +16,7 @@ const BEProjectVideo = () => {
                 </h3>
             </div>
 
-            <motion.div
+            <Motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -79,7 +79,7 @@ const BEProjectVideo = () => {
                         </button>
                     </div>
                 </div>
-            </motion.div>
+            </Motion.div>
         </Section>
     );
 };

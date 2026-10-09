@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from './Section';
 import { projects } from '../data/portfolio';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
@@ -16,20 +16,20 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
-                    <motion.div
+                    <Motion.div
                         key={project.id}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="glass-card rounded-2xl overflow-hidden group flex flex-col h-full"
+                        className={`glass-card project-card rounded-2xl overflow-hidden group flex flex-col h-full ${index === 0 ? 'md:col-span-2 lg:col-span-2' : ''}`}
                     >
-                        <div className="relative h-48 overflow-hidden">
+                        <div className={`relative overflow-hidden ${index === 0 ? 'h-64 md:h-80' : 'h-48'}`}>
                             <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10 opacity-60" />
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
 
@@ -77,7 +77,7 @@ const Projects = () => {
                                 )}
                             </div>
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 ))}
             </div>
         </Section>
